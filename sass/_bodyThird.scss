@@ -1,0 +1,83 @@
+.body__third{
+    width: 100%;
+    background-color:#fff9fa ;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    margin-top: 5rem;
+
+    &--container{
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 60rem 60rem;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    &--left{
+        width: 100%;
+
+        &--content{
+            ul{
+                list-style: none;
+                font-family: $primary-font-family;
+                // padding-left: 4rem;
+                li{
+                    p{
+                        color: $ternary-color;
+                        font-size: 1.6rem;
+                        font-weight: 400;
+                        margin-bottom: 4.4rem;
+                        line-height: 1.5rem;
+                        display: inline-block;
+                    }
+                    h1{
+                        color: $primary-color;
+                        font-size: 3.2rem;
+                        margin-bottom: 5rem !important;
+                        font-weight: 700;
+                        line-height: 2.75rem;
+                    }
+
+                    img{
+                        margin-right: 1rem;
+                    }
+                }
+            }
+
+        }
+
+        &--btn{
+            width: 100%;
+
+            button{
+                width: 40%;
+                background: $btn-secondary-color;
+                font-family: $primary-font-family;
+                font-size: 1.6rem;
+                line-height: 1.5rem;
+                font-weight: 600;
+                border: none;
+                margin-top: 3rem !important;
+            }
+
+            p{
+                color: $secondary-color;
+                font-family: $primary-font-family;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5rem;
+                margin-top: 1rem ;
+                padding-left: 6rem;
+            }
+        }
+    }
+
+    &--right{
+        width: 100%;
+        text-align: center;
+        img{
+            width: 80%;
+        }   
+    }
+}
