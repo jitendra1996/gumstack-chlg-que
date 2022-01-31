@@ -1,5 +1,5 @@
 .body__fifth{
-    width: 100%;
+    width: 100vw;
     background-color:#fff9fa ;
     padding-top: 8rem;
     padding-bottom: 8rem;
@@ -13,6 +13,30 @@
         justify-items: center;
         align-items: center;
         grid-row-gap: 5rem;
+
+        @include respond(mobileS){
+            width: 88%;
+            grid-template-rows: 35rem 35rem 35rem;
+            grid-row-gap: 15rem;
+        }
+    }
+
+    #webContent{
+        display: inline;
+    }
+
+    #moboContent{
+        display: none;
+    }
+
+    @include respond(mobileL){
+        #webContent{
+            display: none;
+        }
+
+        #moboContent{
+            display: inline;
+        }
     }
 
     &--top{
@@ -25,6 +49,15 @@
             font-weight: 700;
             font-family: $primary-font-family;
             margin-bottom: 3rem;
+
+            @include respond(tablet){
+                font-size: 4.2rem;
+            }
+
+            @include respond(mobileS){
+                font-size: 7.2rem;
+                line-height: 8.75rem;
+            }
         }
         p{
             color: $secondary-color;
@@ -32,6 +65,16 @@
             font-family: $primary-font-family;
             font-weight: 400;
             line-height: 1.5rem;
+
+            @include respond(tablet){
+                font-size: 2rem;
+                line-height: 2.5rem;
+            }
+
+            @include respond(mobileS){
+                font-size: 3rem;
+                line-height: 4.5rem;
+            }
         }
     }
 
@@ -41,6 +84,12 @@
         img{
             width: 10rem;
             height: 10rem;
+
+            @include respond(mobileS){
+                width: 15rem;
+                height: 15rem;
+                margin: 4rem;
+            }
         }
         p{
             color: $secondary-color;
@@ -50,8 +99,17 @@
             line-height: 1.5rem;
             margin-bottom: 2rem;
 
+            @include respond(tablet){
+                font-size: 2rem;
+            }
+
             i{
                 color: gold !important;
+            }
+
+            @include respond(mobileS){
+                font-size: 3rem;
+                line-height: 2.5rem;
             }
         }
 
@@ -62,6 +120,15 @@
             font-family: $primary-font-family;
             line-height: 2.75rem;
             margin-bottom: 3rem;
+
+            @include respond(tablet){
+                font-size: 3.7rem;
+            }
+
+            @include respond(mobileS){
+                font-weight: 600;
+                line-height: 4.75rem;
+            }
         }
     }
 
@@ -73,6 +140,11 @@
             font-size: 3.2rem;
             font-family: $primary-font-family;
             font-weight: 400;
+
+            @include respond(mobileS){
+                font-size: 4.2rem;
+                line-height: 7rem;
+            }
         }
     }
 }

@@ -8,9 +8,46 @@
 
 html{
     font-size: 62.5%;
+
+    @include respond(Klaptop){
+        font-size: 80%;
+    }
+
+    @include respond(laptopL){
+        font-size: 60%;
+    }
+
+    @include respond(btLaptopL){
+        font-size: 50%;
+    }
+
+    @include respond(laptop){
+        font-size: 35%;
+    }
+
+    @include respond(tablet){
+        font-size: 40%;
+    }
+
+    @include respond(tabletSmall){
+        font-size: 30%;
+    }
+
+    @include respond(mobileL){
+        font-size: 26%;
+    }
+
+    // @include respond(mobileM){
+    //     font-size: 10%;
+    // }
+
+    // @include respond(mobileS){
+    //     // font-size: 10%;
+    // }
 }
 
 body{
     box-sizing: border-box;
+    overflow-x: clip;
 }
 

@@ -1,21 +1,45 @@
 .body__fourth{
-    width: 100%;
+    width: 100vw;
     margin-top: 5rem;
     
     &--container{
         width: 80%;
         margin: 0 auto;
         display: grid;
-        grid-template-rows: 10rem 60rem 10rem;
+        grid-template-rows: .3fr 1fr 1fr .3fr;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-areas: 
+            "top top top top"
+            "item1 item2 item3 item4"
+            "item5 item6 item7 item8"
+            "bottom bottom bottom bottom"
+        ;
         align-items: center;
         justify-items: center;
         padding-top: 5rem;
-        // grid-row-gap: 4rem;
+        grid-row-gap: 10rem;
+
+        @include respond(tablet){
+            width: 90%;
+            display: grid;
+            grid-template-rows: .3fr .5fr .5fr .5fr .5fr .3fr;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+                "top top"
+                "item1 item2"
+                "item3 item4"
+                "item5 item6"
+                "item7 item8"
+                "bottom bottom"
+            ;
+        }
     }
 
     &--top{
         width: 100%;
         text-align: center;
+        grid-area: top;
+
         h1{
             font-size: 3.2rem;
             line-height: 2.75rem;
@@ -23,6 +47,16 @@
             color: $primary-color;
             font-family: $primary-font-family;
             margin-bottom: 2.5rem;
+
+            @include respond(tablet){
+                font-size: 4.2rem;
+                line-height: 6.75rem;
+            }
+
+            @include respond(mobileS){
+                font-size: 6.6rem;
+                line-height: 9.75rem;
+            }
         }
         p{
             font-size: 1.6rem;
@@ -30,44 +64,122 @@
             font-weight: 400;
             line-height: 1.5rem;
             color: $secondary-color;
+
+            @include respond(tablet){
+                font-size: 2.5rem;
+                line-height: 2.5rem;
+            }
+
+            @include respond(mobileS){
+                font-size: 3rem;
+                line-height: 4.5rem;
+            }
         }
     }
 
-    &--middle{
-        display: grid;
-        grid-template-rows: 20rem 20rem;
-        grid-template-columns: 30rem 30rem 30rem 30rem;
-        align-items: center;
-        justify-items: center;
+    .item{
+        &--1{
+            grid-area: item1;
+            text-align: center;
+        }
 
-        .item{
-            img{
-                margin-bottom: 1rem;
+        &--2{
+            grid-area: item2;
+            text-align: center;
+        }
+
+        &--3{
+            grid-area: item3;
+            text-align: center;
+        }
+
+        &--4{
+            grid-area: item4;
+            text-align: center;
+        }
+
+        &--5{
+            grid-area: item5;
+            text-align: center;
+        }
+
+        &--6{
+            grid-area: item6;
+            text-align: center;
+        }
+
+        &--7{
+            grid-area: item7;
+            text-align: center;
+        }
+
+        &--8{
+            grid-area: item8;
+            text-align: center;
+        }
+
+        img{
+            margin-bottom: 1rem;
+            width:5rem;
+
+            @include respond(tablet){
+                width: 8rem;
             }
-            .heading{
-                margin-bottom: 1.5rem;
-                color: $primary-color;
-                font-size: 1.6rem;
-                line-height: 1.5rem;
-                font-weight: 600;
-                font-family: $primary-font-family;
+
+            @include respond(mobileS){
+                width: 10rem;
             }
-            .content{
-                color: $secondary-color;
-                font-size: 1.2rem;
-                line-height: 1.5rem;
-                font-weight: 400;
-                font-family: $primary-font-family;
+        }
+        .heading{
+            margin-bottom: 1.5rem;
+            color: $primary-color;
+            font-size: 1.6rem;
+            line-height: 1.5rem;
+            font-weight: 600;
+            font-family: $primary-font-family;
+
+            @include respond(tablet){
+                font-size: 2.6rem;
+                line-height: 4.5rem;
+            }
+
+            @include respond(mobileS){
+                font-size: 3.6rem;
+                line-height: 6.5rem;
+            }
+        }
+        .content{
+            color: $secondary-color;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            font-weight: 400;
+            font-family: $primary-font-family;
+
+            @include respond(tablet){
+                display: none;
             }
         }
     }
 
     &--bottom{
+        grid-area: bottom;
         width: 100%;
         text-align: center;
         button{
             background: $btn-secondary-color;
             border: none;
+            width: 30%;
+
+            @include respond(tablet){
+                font-size: 2.5rem;
+                width: 50%;
+            }
+
+            @include respond(mobileS){
+                width: 75%;
+                font-size: 3.5rem;
+                padding: 3rem;
+            }
         }
     }
 }
